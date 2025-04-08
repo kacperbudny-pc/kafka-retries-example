@@ -44,8 +44,8 @@ export class KafkaMaxRetryExceptionFilter extends BaseExceptionFilter {
     }
 
     // If retry count is below the maximum, proceed with the default Exception Filter logic
-    // super.catch(exception, host);
-    throw exception;
+    super.catch(exception, host);
+    // throw exception;
   }
 
   private getRetryCountFromContext(context: KafkaContext): number {
